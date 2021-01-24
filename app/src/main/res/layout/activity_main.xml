@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDE6E6"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="625dp" />
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/mail"
+            android:icon="@drawable/ic_mail"
+            android:title="@string/mail" />
+        <item android:id="@+id/upload"
+            android:icon="@drawable/ic_upload"
+            android:title="@string/upload"
+            android:showAsAction="ifRoom" />
+        <item android:id="@+id/share"
+            android:icon="@drawable/ic_share"
+            android:title="@string/share" />
+    </menu>
+
+    <Button
+        android:id="@+id/btnShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Popup Menu"
+        android:onClick="showPopup" />
+    public void showPopup(View v) {
+    PopupMenu popup = new PopupMenu(this, v);
+    MenuInflater inflater = popup.getMenuInflater();
+    inflater.inflate(R.menu.menu_example, popup.getMenu());
+    popup.show();
+    }
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A19999"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/legislation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#9A55555C"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:shadowColor="#A38D8D"
+            android:text="Legislation"
+            android:textColor="@color/black"
+            android:textColorHighlight="#1EADD1"
+            android:textColorHint="#FFFFFF"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/execution"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="Execution"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/juridiction"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Juridiction"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/library"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="Library"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>
